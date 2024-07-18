@@ -173,7 +173,14 @@ DON'T: To authorize self-signed certificates (only for test) for WSS, from your 
 https://your.fusionpbx.address:7443/
 ```
 and force the browser to accept (I understand the risks, etc)
-
+Customization in Saraphone.js to use it with JWT token
+-----------------------------------------------------
+1) There is a function name init() which actually intiates the registeration process with the Opensips server
+2) in the username field , username will be sent without @cequens.com 
+3) in the password field we will be sending the JWT received from AWS cognito or Key Cloak .
+4) this token will be set as authorization bearer in the SIP header which will be extracted in the OPensips and will authenticate against the public key already set in Opensips.
+5) If authorized , SIP OK will be received and webrtc endpoint will be registered.
+6) If JWT isnt valid for the user entered in username then SIP 401 UnAuthorized will be received in sip message.
 
 FAQs, PROBLEMs, Troubleshooting
 ----------------------------
