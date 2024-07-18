@@ -172,7 +172,7 @@ DON'T: To authorize self-signed certificates (only for test) for WSS, from your 
 ```
 https://your.fusionpbx.address:7443/
 ```
-and force the browser to accept (I understand the risks, etc)
+
 Customization in Saraphone.js to use it with JWT token
 -----------------------------------------------------
 1) There is a function name init() which actually intiates the registeration process with the Opensips server
